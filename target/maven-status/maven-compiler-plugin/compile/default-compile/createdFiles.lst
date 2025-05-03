@@ -1,0 +1,7 @@
+me\friedwingis\plugin\starforging\StarForging.class
+me\friedwingis\plugin\starforging\utils\Constants.class
+me\friedwingis\plugin\starforging\objects\ForgeGUI.class
+me\friedwingis\plugin\starforging\utils\Chat.class
+me\friedwingis\plugin\starforging\objects\ItemBuilder.class
+me\friedwingis\plugin\starforging\PlayerListeners.class
+me\friedwingis\plugin\starforging\commands\StarForgeCommand.class

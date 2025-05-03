@@ -1,22 +1,31 @@
 package me.friedwingis.plugin.starforging;
 
-import lombok.Getter;
+import me.friedwingis.plugin.starforging.commands.StarForgeCommand;
 import org.bukkit.plugin.java.JavaPlugin;
+import revxrsal.commands.bukkit.BukkitCommandHandler;
 
 public final class StarForging extends JavaPlugin {
 
-    // Main class instance accessible globally
-    public static StarForging _I;
+    private BukkitCommandHandler commandHandler; // Handler to manage commands for the plugin
 
-    // Plugin enable logic
+    /**
+     * Called when the plugin is enabled. Registers event listeners and commands.
+     */
     @Override
     public void onEnable() {
-        _I = this;
+        // Register player-related event listeners (such as handling crop farming)
+        getServer().getPluginManager().registerEvents(new PlayerListeners(), this);
+
+        // Initialize the command handler and register our custom commands
+        this.commandHandler = BukkitCommandHandler.create(this);
+        this.commandHandler.register(new StarForgeCommand()); // Register the "starforge" command
     }
 
-    // Plugin disable logic
+    /**
+     * Called when the plugin is disabled. This is where any cleanup logic would go.
+     */
     @Override
     public void onDisable() {
-        _I = null;
+        // Placeholder for disabling actions if needed (e.g., saving data or stopping tasks).
     }
 }
