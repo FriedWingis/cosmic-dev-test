@@ -1,7 +1,9 @@
-C:\Users\realb\Development\cosmic-dev-test\src\main\java\me\friedwingis\plugin\starforging\commands\StarForgeCommand.java
-C:\Users\realb\Development\cosmic-dev-test\src\main\java\me\friedwingis\plugin\starforging\objects\ForgeGUI.java
-C:\Users\realb\Development\cosmic-dev-test\src\main\java\me\friedwingis\plugin\starforging\objects\ItemBuilder.java
+C:\Users\realb\Development\cosmic-dev-test\src\main\java\me\friedwingis\plugin\starforging\commands\CelestialForgeCommand.java
+C:\Users\realb\Development\cosmic-dev-test\src\main\java\me\friedwingis\plugin\starforging\commands\StarDustCommand.java
 C:\Users\realb\Development\cosmic-dev-test\src\main\java\me\friedwingis\plugin\starforging\PlayerListeners.java
 C:\Users\realb\Development\cosmic-dev-test\src\main\java\me\friedwingis\plugin\starforging\StarForging.java
+C:\Users\realb\Development\cosmic-dev-test\src\main\java\me\friedwingis\plugin\starforging\struct\ForgeGUI.java
+C:\Users\realb\Development\cosmic-dev-test\src\main\java\me\friedwingis\plugin\starforging\struct\ItemBuilder.java
+C:\Users\realb\Development\cosmic-dev-test\src\main\java\me\friedwingis\plugin\starforging\struct\StarboundTrait.java
 C:\Users\realb\Development\cosmic-dev-test\src\main\java\me\friedwingis\plugin\starforging\utils\Chat.java
 C:\Users\realb\Development\cosmic-dev-test\src\main\java\me\friedwingis\plugin\starforging\utils\Constants.java

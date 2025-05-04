@@ -10,14 +10,13 @@ import java.text.DecimalFormat;
  * Copyright Fried - 2025
  * All code is private and not to be used by any
  * other entity unless explicitly stated otherwise.
- **/
-
-/*
+ *
  * Utility class for converting Strings w/ Minimessage color
- * codes to Minimessage Components.
+ * codes to Minimessage Components and other useful String utils.
  */
 public class Chat {
     private static final MiniMessage MINI_MESSAGE = MiniMessage.miniMessage();
+    public static final Component EMPTY_STRING = format("");
 
     public static Component format(String message) {
         return MINI_MESSAGE.deserialize(message).decoration(TextDecoration.ITALIC, false);

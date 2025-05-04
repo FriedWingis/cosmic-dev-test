@@ -1,7 +1,7 @@
 package me.friedwingis.plugin.starforging.utils;
 
 import com.google.common.collect.Maps;
-import me.friedwingis.plugin.starforging.objects.ItemBuilder;
+import me.friedwingis.plugin.starforging.struct.ItemBuilder;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
@@ -24,8 +24,6 @@ public class Constants {
     public static final Map<Material, Double> CROP_RARITY;
     public static final NamespacedKey STARDUST_KEY;
     public static final ItemStack STARDUST;
-    public static final int[] PINK_PANES, BLUE_PANES;
-    public static final int INPUT_SLOT, DUST_SLOT, OUTPUT_SLOT;
 
     static {
         CROP_RARITY = Maps.newHashMap();
@@ -50,7 +48,7 @@ public class Constants {
         STARDUST_KEY = new NamespacedKey("starforging", "sf_istardust");
 
         STARDUST = new ItemBuilder(Material.BONE_MEAL)
-                .setDisplayName("<gradient:#e0e0e0:#ffffff><b>Star Dust")
+                .setDisplayName("<gradient:#e0e0e0:#ffffff><b>StarDust")
                 .setLore(
                         "<gray>Essence of fallen stars, shimmering with cosmic energy.",
                         "<gray>Used to imbue items with powerful Starbound traits.",
@@ -61,12 +59,5 @@ public class Constants {
                 .applyItemFlags(ItemFlag.values())
                 .addPersistentData(STARDUST_KEY, PersistentDataType.STRING, "jungleplanetog")
                 .build();
-
-        BLUE_PANES = new int[] { 2, 3, 5, 7, 8, 10, 13, 17, 20, 21, 23, 25 };
-        PINK_PANES = new int[] { 0, 1, 4, 6, 9, 14, 16, 18, 19, 22, 24 };
-
-        INPUT_SLOT = 11;
-        DUST_SLOT = 12;
-        OUTPUT_SLOT = 15;
     }
 }

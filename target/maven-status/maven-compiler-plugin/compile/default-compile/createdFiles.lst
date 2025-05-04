@@ -1,7 +1,10 @@
 me\friedwingis\plugin\starforging\StarForging.class
+me\friedwingis\plugin\starforging\struct\ForgeGUI.class
+me\friedwingis\plugin\starforging\struct\StarboundTrait.class
 me\friedwingis\plugin\starforging\utils\Constants.class
-me\friedwingis\plugin\starforging\objects\ForgeGUI.class
+me\friedwingis\plugin\starforging\commands\CelestialForgeCommand.class
 me\friedwingis\plugin\starforging\utils\Chat.class
-me\friedwingis\plugin\starforging\objects\ItemBuilder.class
 me\friedwingis\plugin\starforging\PlayerListeners.class
-me\friedwingis\plugin\starforging\commands\StarForgeCommand.class
+me\friedwingis\plugin\starforging\struct\ForgeGUI$1.class
+me\friedwingis\plugin\starforging\commands\StarDustCommand.class
+me\friedwingis\plugin\starforging\struct\ItemBuilder.class

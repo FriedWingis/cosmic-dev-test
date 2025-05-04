@@ -1,4 +1,4 @@
-package me.friedwingis.plugin.starforging.objects;
+package me.friedwingis.plugin.starforging.struct;
 
 import lombok.Getter;
 import me.friedwingis.plugin.starforging.utils.Chat;

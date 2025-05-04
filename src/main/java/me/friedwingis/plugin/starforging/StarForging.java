@@ -1,6 +1,7 @@
 package me.friedwingis.plugin.starforging;
 
-import me.friedwingis.plugin.starforging.commands.StarForgeCommand;
+import me.friedwingis.plugin.starforging.commands.StarDustCommand;
+import me.friedwingis.plugin.starforging.commands.CelestialForgeCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 import revxrsal.commands.bukkit.BukkitCommandHandler;
 
@@ -18,7 +19,8 @@ public final class StarForging extends JavaPlugin {
 
         // Initialize the command handler and register our custom commands
         this.commandHandler = BukkitCommandHandler.create(this);
-        this.commandHandler.register(new StarForgeCommand()); // Register the "starforge" command
+        this.commandHandler.register(new CelestialForgeCommand()); // Register the "starforge" command
+        this.commandHandler.register(new StarDustCommand()); // Register the "stardust" command
     }
 
     /**
