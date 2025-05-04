@@ -88,13 +88,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- IF API -->
-        <dependency>
-            <groupId>com.github.stefvanschie.inventoryframework</groupId>
-            <artifactId>IF</artifactId>
-            <version>0.10.19</version>
-        </dependency>
-
         <!--- Lamp -->
         <dependency>
             <groupId>com.github.Revxrsal.Lamp</groupId>
