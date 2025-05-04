@@ -210,9 +210,9 @@ public class ForgeGUI implements InventoryHolder {
         final double r = Math.random();
 
         StarboundTrait trait;
-        if (r < 0.05) {
+        if (r < 0.15) {
             trait = StarboundTrait.GALACTIC_REINFORCEMENT;
-        } else if (r < 0.25) {
+        } else if (r < 0.40) {
             trait = StarboundTrait.VOID_STEP;
         } else {
             trait = StarboundTrait.SOLAR_WRATH;

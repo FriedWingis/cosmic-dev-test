@@ -131,15 +131,31 @@ public class PlayerListeners implements Listener {
 
         // Handle Galactic Reinforcement trait
         if (hasTrait(player, StarboundTrait.GALACTIC_REINFORCEMENT)) {
-            final double currentHealth = player.getHealth(), maxHealth = Objects.requireNonNull(player.getAttribute(Attribute.MAX_HEALTH)).getValue();
+            // Get the player's current and max health
+            final double currentHealth = player.getHealth();
+            final double maxHealth = Objects.requireNonNull(player.getAttribute(Attribute.MAX_HEALTH)).getValue();
 
+            // Check if the player's health is at or below 25% of their maximum
             if (currentHealth <= maxHealth * 0.25) {
-                final long now = System.currentTimeMillis(),
-                        cooldown = player.getMetadata("trait_cd").getFirst().asLong();
+                // Get the current system time
+                final long now = System.currentTimeMillis();
 
+                // Retrieve the cooldown timestamp from metadata, or default to 0 if not present
+                final long cooldown = player.hasMetadata("trait_cd")
+                        ? player.getMetadata("trait_cd").getFirst().asLong()
+                        : 0L;
+
+                // If the cooldown has expired, apply the trait effect
                 if (now >= cooldown) {
-                    player.addPotionEffect(new PotionEffect(PotionEffectType.ABSORPTION, 60, 1)); // Apply Absorption effect.
-                    player.setMetadata("trait_cd", new FixedMetadataValue(JavaPlugin.getPlugin(StarForging.class), now + 20_000)); // Set cooldown.
+                    // Give the player the Absorption effect for 3 seconds (60 ticks) at level 2
+                    player.addPotionEffect(new PotionEffect(PotionEffectType.ABSORPTION, 60, 1));
+
+                    // Set a new cooldown (20 seconds from now)
+                    player.setMetadata("trait_cd", new FixedMetadataValue(
+                            JavaPlugin.getPlugin(StarForging.class),
+                            now + 20_000
+                    ));
+
                     player.sendMessage(Chat.format("<#D8B4F8><b>Galactic Reinforcement</b> - Absorption activated!"));
                 }
             }
@@ -166,8 +182,11 @@ public class PlayerListeners implements Listener {
             final Vector direction = attackerLocation.getDirection().normalize().multiply(-1);
             final Location behindAttacker = attackerLocation.add(direction.setY(0)).add(0, 0.5, 0);
 
-            victim.teleport(behindAttacker); // Teleport victim behind attacker.
-            victim.sendMessage(Chat.format("<#6A0DAD><b>Void Step</b> - You teleported behind your attacker!"));
+            // Check if the block at the teleport location is empty
+            if (behindAttacker.getBlock().getType().isAir()) {
+                victim.teleport(behindAttacker); // Teleport victim behind attacker.
+                victim.sendMessage(Chat.format("<#6A0DAD><b>Void Step</b> - You teleported behind your attacker!"));
+            }
         }
 
         // Handle Solar Wrath trait - Increase damage in sunlight and blind at high noon.
