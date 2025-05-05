@@ -27,23 +27,23 @@ public class Constants {
 
     static {
         CROP_RARITY = Maps.newHashMap();
-        CROP_RARITY.put(Material.WHEAT, 0.30);
-        CROP_RARITY.put(Material.SWEET_BERRIES, 0.29);
-        CROP_RARITY.put(Material.GLOW_BERRIES, 0.28);
-        CROP_RARITY.put(Material.POTATO, 0.27);
-        CROP_RARITY.put(Material.PITCHER_PLANT, 0.26);
-        CROP_RARITY.put(Material.CARROT, 0.25);
-        CROP_RARITY.put(Material.TORCHFLOWER, 0.24);
-        CROP_RARITY.put(Material.SUGAR_CANE, 0.23);
+        CROP_RARITY.put(Material.CHORUS_FRUIT, 0.30);
+        CROP_RARITY.put(Material.WEEPING_VINES, 0.29);
+        CROP_RARITY.put(Material.COCOA_BEANS, 0.28);
+        CROP_RARITY.put(Material.NETHER_WART, 0.27);
+        CROP_RARITY.put(Material.PUMPKIN, 0.26);
+        CROP_RARITY.put(Material.TWISTING_VINES, 0.25);
+        CROP_RARITY.put(Material.BEETROOT, 0.24);
+        CROP_RARITY.put(Material.MELON, 0.23);
         CROP_RARITY.put(Material.BAMBOO, 0.22);
-        CROP_RARITY.put(Material.MELON, 0.21);
-        CROP_RARITY.put(Material.BEETROOT, 0.20);
-        CROP_RARITY.put(Material.TWISTING_VINES, 0.19);
-        CROP_RARITY.put(Material.PUMPKIN, 0.18);
-        CROP_RARITY.put(Material.NETHER_WART, 0.17);
-        CROP_RARITY.put(Material.COCOA_BEANS, 0.16);
-        CROP_RARITY.put(Material.WEEPING_VINES, 0.15);
-        CROP_RARITY.put(Material.CHORUS_FRUIT, 0.14);
+        CROP_RARITY.put(Material.SUGAR_CANE, 0.21);
+        CROP_RARITY.put(Material.TORCHFLOWER, 0.20);
+        CROP_RARITY.put(Material.CARROT, 0.19);
+        CROP_RARITY.put(Material.PITCHER_PLANT, 0.18);
+        CROP_RARITY.put(Material.POTATO, 0.17);
+        CROP_RARITY.put(Material.GLOW_BERRIES, 0.16);
+        CROP_RARITY.put(Material.SWEET_BERRIES, 0.15);
+        CROP_RARITY.put(Material.WHEAT, 0.14);
 
         STARDUST_KEY = new NamespacedKey("starforging", "sf_istardust");
 
