@@ -13,7 +13,7 @@ Coming from my experience on CosmicPvP, CosmicSky, and other OP PvP servers, I f
 
 ## How to Get Started In-Game
 
-1. **Farm Crops**: I've implemented the current crop shop items from CosmicSky. The cheaper the sell price on CosmicSky, the more likely it is to drop.
+1. **Farm Crops**: I've implemented the current crop shop items from CosmicSky. The more expensive the crop is on CosmicSky, the more likely StarDust is to drop.
 2. **Collect StarDust**: Gather 48 StarDust for Diamond armor and 64 for Netherite armor.
 3. **Gather Armor**: Choose a suitable piece of armor to upgrade.
 4. **Visit the /celestialforge**: Here, you can insert your armor and the required StarDust.
