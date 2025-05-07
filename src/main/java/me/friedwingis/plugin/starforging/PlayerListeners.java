@@ -16,10 +16,12 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.inventory.ClickType;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
+import org.bukkit.inventory.InventoryView;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -87,13 +89,33 @@ public class PlayerListeners implements Listener {
      * @param event The InventoryClickEvent triggered when a player clicks in their inventory.
      */
     @EventHandler
-    private void onClick(final InventoryClickEvent event) {
-        final Inventory top = event.getView().getTopInventory();
-        final InventoryHolder holder = top.getHolder();
+    public void onInventoryClick(InventoryClickEvent event) {
+        if (!(event.getWhoClicked() instanceof Player player)) return;
 
-        if (holder instanceof ForgeGUI gui && event.getRawSlot() < top.getSize()) {
-            event.setCancelled(true); // Prevent default behavior.
-            gui.handleTopClick(event); // Process the Forge GUI click.
+        final Inventory clickedInv = event.getClickedInventory();
+        final InventoryView view = event.getView();
+        final Inventory top = view.getTopInventory();
+
+        if (!(top.getHolder() instanceof ForgeGUI gui)) return;
+
+        // Cancel all clicks involving the top inventory
+        if (event.getRawSlot() < top.getSize()) {
+            event.setCancelled(true);
+            if (event.isShiftClick()) return; // prevent shift into GUI
+            gui.handleTopClick(event);
+            return;
+        }
+
+        // Prevent shift-clicks from player inventory into the GUI
+        if (event.isShiftClick() && clickedInv != null && clickedInv.equals(player.getInventory())) {
+            event.setCancelled(true);
+            return;
+        }
+
+        // Prevent number key swap into GUI
+        if (event.getClick() == ClickType.NUMBER_KEY && event.getRawSlot() < top.getSize()) {
+            event.setCancelled(true);
+            return;
         }
     }
 
